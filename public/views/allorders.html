@@ -1,5 +1,7 @@
 <div class="col-md-9 col-md-offset-1">
-    <h2>{{ orderCtrl.customer.name }}'s Orders</h2>
+    <h2>All Customer Orders</h2>
+    Filter: <input type="text" ng-model="orderFilter.product" placeholder="Product"/>
+    <br/><br/>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -8,12 +10,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="order in orderCtrl.customer.orders">
+            <tr ng-repeat="order in allOrderCtrl.orders | filter:orderFilter | orderBy:'name'">
                 <td>{{ order.product }}</td>
                 <td>{{ order.total | currency }}</td>
             </tr>
+            <tr ng-class="totalType">
+                <td>&nbsp;</td>
+                <td>{{ ordersTotal | currency }}</td>
+            </tr>
         </tbody>
     </table>
-    <br />
+    <br/>
     <p><a href="/">Back to Customers</a></p>
 </div>

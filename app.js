@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var customers = require('./routes/customers');
+var orders = require('./routes/orders');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/customers', customers);
+app.use('/orders', orders);
 app.use('/', routes);
 
 app.get('*', function (req, res) {

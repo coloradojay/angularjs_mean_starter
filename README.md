@@ -1,4 +1,10 @@
-# angularjs_mean_starter
-AngularJS with Node Backend Starter
+# AngularJS with Node Backend Starter
 
-# LETS DO THIS
+## To Get Started
+Clone the repo, then move into the directory, from the terminal:
+
+```
+npm install -g bower
+npm install
+bower install
+```

@@ -9,6 +9,12 @@
                         controllerAs: 'custCtrl',
                         templateUrl: 'views/customers.html'
                     })
+                .when('/orders',
+                    {
+                        controller: 'AllOrdersController',
+                        controllerAs: 'allOrderCtrl',
+                        templateUrl: 'views/allorders.html'
+                    })
                 .when('/orders/:customerId',
                     {
                         controller: 'OrdersController',
