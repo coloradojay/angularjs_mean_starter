@@ -1,0 +1,35 @@
+<div class="col-md-9 col-md-offset-1">
+    <h2>{{ custCtrl.appSettings.title }}</h2>
+    Filter: <input type="text" ng-model="customerFilter.name" placeholder="Name"/>
+    <br /><br />
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th ng-click="doSort('id')">Customer ID</th>
+                        <th ng-click="doSort('name')">Name</th>
+                        <th ng-click="doSort('city')">City</th>
+                        <th ng-click="doSort('joined')">Joined</th>
+                        <th ng-click="doSort('orderTotal')">Order Total</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="cust in custCtrl.customers | filter:customerFilter | orderBy:sortBy:reverse">
+                        <td>{{ cust.id }}</td>
+                        <td>{{ cust.name }}</td>
+                        <td>{{ cust.city }}</td>
+                        <td>{{ cust.joined | date }}</td>
+                        <td>{{ cust.orderTotal | currency }}</td>
+                        <td><a href="orders/{{ cust.id }}">View Orders</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br />
+    <span>Total Customers: {{ custCtrl.customers.length }}</span>
+    <br /><br />
+    <footer>Version: {{ custCtrl.appSettings.version }}</footer>
+</div>

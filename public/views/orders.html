@@ -1,0 +1,19 @@
+<div class="col-md-9 col-md-offset-1">
+    <h2>{{ orderCtrl.customer.name }}'s Orders</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="order in orderCtrl.customer.orders">
+                <td>{{ order.product }}</td>
+                <td>{{ order.total | currency }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <p><a href="index.html">Back to Customers</a></p>
+</div>
