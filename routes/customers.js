@@ -21,4 +21,18 @@ router.get('/:id', function(req, res){
     res.json(data);
 });
 
+router.delete('/:id', function(req, res){
+    var customerId = parseInt(req.params.id);
+    var data = { status: true};
+
+    for (var i = 0; i < customers.length; i++){
+        if(customers[i].id === customerId){
+            customers.splice(i, 1);
+            data = { status: true };
+            break;
+        }
+    }
+    res.json(data);
+});
+
 module.exports = router;

@@ -1,7 +1,7 @@
 (function () {
     angular
         .module('customersApp')
-        .controller('allOrdersController', allOrdersCtrl);
+        .controller('AllOrdersController', allOrdersCtrl);
 
     allOrdersCtrl.inject = ['customersFactory'];
 
@@ -10,7 +10,7 @@
 
         self.orders = null;
         self.ordersTotal = 0.0;
-        self.totalType;
+        self.totalType = 0;
 
         function init() {
             customersFactory.getOrders()
@@ -36,5 +36,4 @@
 
         init();
     }
-
 })();
