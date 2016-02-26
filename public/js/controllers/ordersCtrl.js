@@ -14,7 +14,6 @@
 
         self.customer = null;
 
-
         function init() {
             customersFactory.getCustomer(customerId)
                 .success(function(customer){

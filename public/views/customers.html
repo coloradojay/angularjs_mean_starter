@@ -7,17 +7,17 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th ng-click="doSort('id')">Customer ID</th>
-                        <th ng-click="doSort('name')">Name</th>
-                        <th ng-click="doSort('city')">City</th>
-                        <th ng-click="doSort('joined')">Joined</th>
-                        <th ng-click="doSort('orderTotal')">Order Total</th>
+                        <th ng-click="custCtrl.doSort(custCtrl.customers.id)">Customer ID</th>
+                        <th ng-click="custCtrl.doSort(custCtrl.customers.name)">Name</th>
+                        <th ng-click="custCtrl.doSort(custCtrl.customers.city)">City</th>
+                        <th ng-click="custCtrl.doSort(custCtrl.customers.id.joined)">Joined</th>
+                        <th ng-click="custCtrl.doSort(custCtrl.customers.orderTotal)">Order Total</th>
                         <th>Orders</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="cust in custCtrl.customers | filter:customerFilter | orderBy:sortBy:reverse">
+                    <tr ng-repeat="cust in custCtrl.customers | filter:customerFilter | orderBy:custCtrl.sortBy:custCtrl.reverse">
                         <td>{{ cust.id }}</td>
                         <td>{{ cust.name }}</td>
                         <td>{{ cust.city }}</td>
@@ -25,7 +25,7 @@
                         <td>{{ cust.orderTotal | currency }}</td>
                         <td><a href="orders/{{ cust.id }}">View Orders</a></td>
                         <td class="center">
-                            <i class="fa fa-trash fa-lg"><span ng-click="deleteCustomer(cust.id)"></span></i>
+                            <span class="fa fa-trash fa-lg" ng-click="deleteCustomer(cust.id)"></span>
                         </td>
                     </tr>
                 </tbody>

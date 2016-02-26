@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module('customersApp', ['ngRoute'])
+        .module('customersApp', ['ngRoute', 'ngAnimate'])
         .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
             $routeProvider
                 .when('/',

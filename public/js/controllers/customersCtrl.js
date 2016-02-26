@@ -49,7 +49,7 @@
 
                 })
                 .error(function(data, status, headers, config) {
-                    //$log.log(data.error + ' ' + status);
+                    $log.log(data.error + ' ' + status);
                 });
         };
 
