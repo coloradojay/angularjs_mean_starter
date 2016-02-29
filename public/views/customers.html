@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="cust in custCtrl.customers | filter:customerFilter | orderBy:custCtrl.sortBy:custCtrl.reverse">
+                    <tr ng-repeat="cust in custCtrl.customers | filter:customerFilter | orderBy:custCtrl.sortBy:custCtrl.reverse" class="repeat-animation">
                         <td>{{ cust.id }}</td>
                         <td>{{ cust.name }}</td>
                         <td>{{ cust.city }}</td>
